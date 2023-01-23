@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import com.bankAccount.application.dtos.TransactionDto;
-import com.bankAccount.domain.model.Account;
 import com.bankAccount.domain.model.Action;
 import com.bankAccount.domain.port.incoming.Deposit;
 import com.bankAccount.domain.port.incoming.Printing;
@@ -33,7 +32,6 @@ public class AccountController {
 
 
 	@PostMapping("/deposit")
-	@RequestMapping(value = "/deposit", method = RequestMethod.POST, produces = { "application/json" })
 	public ResponseEntity<String> deposit(TransactionDto dtos) {
 		try {
 			depositUseCase.deposit(dtos);
