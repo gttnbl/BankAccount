@@ -63,4 +63,10 @@ public class AccountController {
 		return printingUseCase.print(accountNo);
 	}
 
+	
+	@GetMapping(value = "/{accountNo}/print")
+	public List<Action> printImenTest(@PathVariable final String accountNo) {
+		return printingUseCase.print(accountNo);
+	}
+	
 }
